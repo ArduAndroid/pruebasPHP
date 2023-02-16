@@ -18,14 +18,19 @@ try {
     echo  "<tr><th>CODIGO</th> ".
      "<th>NOMBRE</th> ".
      "<th>APELLIDOS</th> ".
-     "<th>CORREO</th></tr>";
+     "<th>CORREO</th>".
+     "<th>TELEFONO</th>".
+     "<th>IMAGEN</th></tr>"
+     ;
         foreach($conexion->query($sentenciaSQL) as $fila){
         echo "<tr>
         <td>". $fila["CODIGO"]. "</td>".
         "<td>". $fila["NOMBRE"]. "</td>".
         "<td>". $fila["APELLIDOS"]. "</td>.".
-        "<td>". $fila["CORREO"]. "</td>
-        </tr>";
+        "<td>". $fila["CORREO"]. "</td>".
+        "<td>". $fila["TELEFONO"]. "</td>".
+        "<td><img src='". $fila["IMAGEN"]. "'></img></td>".
+        "</tr>";
         }
     echo "</table>";
 }
